@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="main">
     <div class="main__wrapper">
-      <ReservationForm :rating="1.5" :price="232" :reviews="234" />
+      <ReservationForm :rating="3.5" :price="232" :reviews="234" />
     </div>
   </div>
 </template>

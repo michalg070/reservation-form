@@ -5,7 +5,7 @@
         <h5 class="reservation-form__header__price">{{ price }} zł</h5>
 
         <div class="reservation-form__header__reviews">
-          {{ rating }}
+          <BaseRating :rating="rating" />
 
           <span class="reservation-form__header__count">{{ reviews }}</span>
         </div>
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+  import BaseRating from "@/components/BaseRating.vue";
+
   export default {
     props: {
       price: {
@@ -28,6 +30,8 @@
       },
     },
 
-    components: {},
+    components: {
+      BaseRating,
+    },
   };
 </script>

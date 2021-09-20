@@ -1,0 +1,9 @@
+.base-rating {
+  display: flex;
+  padding-top: rem-calc(1px);
+
+  &__start {
+    width: rem-calc(10px);
+    height: rem-calc(10px);
+  }
+}
