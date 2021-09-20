@@ -1,6 +1,8 @@
 <template>
-  <div id="app">
-    test
+  <div id="app" class="main">
+    <div class="main__wrapper">
+      test
+    </div>
   </div>
 </template>
 
