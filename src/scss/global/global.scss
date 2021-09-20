@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $fontSize;
+}
+
+body {
+  color: $fontPrimary;
+  font-family: "Nunito", sans-serif;
+  font-weight: $fontWeightNormal;
+}
+
+h5 {
+  font-size: rem-calc(21px);
+  font-weight: $fontWeightBold;
+  color: $fontDark;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  &__wrapper {
+    width: rem-calc(440px);
+  }
+}
