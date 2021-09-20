@@ -1,0 +1,33 @@
+.reservation-form {
+  padding: rem-calc(10px);
+
+  background-color: $background;
+
+  &__wrapper {
+    padding: rem-calc(18px) rem-calc(24px);
+
+    border: 2px solid $border;
+  }
+
+  &__header {
+    border-bottom: 2px solid $border;
+    padding-bottom: rem-calc(18px);
+
+    &__price {
+      margin-bottom: rem-calc(6px);
+    }
+    &__reviews {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    &__count {
+      font-size: rem-calc(13px);
+      color: $fontDark;
+      font-weight: $fontWeightBold;
+
+      margin-left: rem-calc(8px);
+    }
+  }
+}
