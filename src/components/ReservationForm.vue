@@ -10,11 +10,14 @@
           <span class="reservation-form__header__count">{{ reviews }}</span>
         </div>
       </header>
+
+      <BaseDatePicker />
     </div>
   </form>
 </template>
 
 <script>
+  import BaseDatePicker from "@/components/BaseDatePicker.vue";
   import BaseRating from "@/components/BaseRating.vue";
 
   export default {
@@ -31,6 +34,7 @@
     },
 
     components: {
+      BaseDatePicker,
       BaseRating,
     },
   };

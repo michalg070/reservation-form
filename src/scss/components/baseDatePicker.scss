@@ -1,0 +1,63 @@
+.base-date-picker {
+  margin-top: rem-calc(24px);
+
+  &__title {
+    font-size: rem-calc(12px);
+    font-weight: $fontWeightBold;
+
+    margin-bottom: rem-calc(6px);
+  }
+
+  &__box {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: rem-calc(45px);
+
+    padding: rem-calc(10px);
+
+    border: 2px solid $border;
+  }
+
+  &__trigger {
+    width: 45%;
+
+    color: $fontPrimary;
+    font-size: rem-calc(18px);
+    font-weight: $fontWeightLight;
+
+    background-color: $background;
+    border: unset;
+
+    padding: rem-calc(4px) rem-calc(6px);
+
+    cursor: pointer;
+
+    &--active {
+      background-color: $dateInputFocus;
+      border-radius: rem-calc(3px);
+    }
+
+    &::placeholder {
+      font-size: rem-calc(16px);
+      font-weight: $fontWeightLight;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+
+    width: rem-calc(30px);
+    height: auto;
+
+    margin: 0 rem-calc(14px);
+  }
+}
