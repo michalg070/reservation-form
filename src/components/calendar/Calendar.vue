@@ -14,6 +14,11 @@
 
       <div class="calendar__body">
         <CalendarWeekdays />
+
+        <CalendarDays
+          :currentDate="currentDate"
+          @selectedRangeChanged="$emit('selectedRangeChanged', $event)"
+        />
       </div>
     </div>
   </div>
@@ -22,6 +27,7 @@
 <script>
   import CalendarHeader from "@/components/calendar/CalendarHeader.vue";
   import CalendarWeekdays from "@/components/calendar/CalendarWeekdays.vue";
+  import CalendarDays from "@/components/calendar/CalendarDays.vue";
 
   import ClickOutside from "vue-click-outside";
 
@@ -41,6 +47,7 @@
     components: {
       CalendarHeader,
       CalendarWeekdays,
+      CalendarDays,
     },
 
     data() {

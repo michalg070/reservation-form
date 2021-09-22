@@ -75,4 +75,103 @@
       text-align: center;
     }
   }
+
+  &__days {
+    gap: rem-calc(6px) 0;
+
+    &__item {
+      $self: &;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: 100%;
+      width: 100%;
+      font-size: rem-calc(12px);
+
+      &--disabled {
+        color: $fontLight;
+        pointer-events: none;
+      }
+
+      &--today {
+        #{ $self }__content {
+          border: 2px solid $primary;
+        }
+      }
+
+      &--selected {
+        #{ $self }__content {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+
+      &--inRange {
+        background-color: $rangeBackground;
+
+        #{ $self }__content {
+          color: $primary;
+        }
+      }
+
+      &--hoverable {
+        cursor: pointer;
+
+        &:hover {
+          #{ $self }__content {
+            background-color: $primary;
+            color: $white;
+          }
+        }
+      }
+
+      &--firstInRange,
+      &--lastInRange {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          width: 50%;
+          height: 100%;
+
+          background-color: $white;
+        }
+
+        #{ $self }__content {
+          color: $white;
+        }
+      }
+
+      &--lastInRange {
+        &::after {
+          left: unset;
+          right: 0;
+        }
+      }
+
+      &__content {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: rem-calc(30px);
+        height: rem-calc(30px);
+
+        border-radius: 50%;
+
+        will-change: background-color, color;
+        transition: 0.15s ease-in;
+
+        z-index: 1;
+      }
+    }
+  }
 }
