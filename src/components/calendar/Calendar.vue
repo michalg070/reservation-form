@@ -11,12 +11,17 @@
 
     <div class="calendar__wrapper">
       <CalendarHeader :currentDate="currentDate" @monthChanged="handleMonthChange" />
+
+      <div class="calendar__body">
+        <CalendarWeekdays />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   import CalendarHeader from "@/components/calendar/CalendarHeader.vue";
+  import CalendarWeekdays from "@/components/calendar/CalendarWeekdays.vue";
 
   import ClickOutside from "vue-click-outside";
 
@@ -35,6 +40,7 @@
 
     components: {
       CalendarHeader,
+      CalendarWeekdays,
     },
 
     data() {

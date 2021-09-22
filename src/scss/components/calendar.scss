@@ -56,4 +56,23 @@
       letter-spacing: 0.75px;
     }
   }
+
+  &__body {
+    padding: rem-calc(20px);
+  }
+
+  &__weekdays,
+  &__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  &__weekdays {
+    margin-bottom: rem-calc(8px);
+
+    &__item {
+      color: $border;
+      text-align: center;
+    }
+  }
 }
