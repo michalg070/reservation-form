@@ -22,4 +22,38 @@
       right: rem-calc(48px);
     }
   }
+
+  &__wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: rem-calc(60px);
+    background-color: $primary;
+
+    padding: 0 rem-calc(21px);
+
+    &__arrow {
+      width: rem-calc(12px);
+      height: rem-calc(12px);
+
+      cursor: pointer;
+
+      &--left {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__text {
+      font-size: rem-calc(18px);
+      font-weight: $fontWeightBold;
+      color: $white;
+      letter-spacing: 0.75px;
+    }
+  }
 }

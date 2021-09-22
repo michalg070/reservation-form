@@ -9,20 +9,38 @@
       alt="triangle-icon"
     />
 
-    calendar content
+    <div class="calendar__wrapper">
+      <CalendarHeader :currentDate="currentDate" @monthChanged="handleMonthChange" />
+    </div>
   </div>
 </template>
 
 <script>
+  import CalendarHeader from "@/components/calendar/CalendarHeader.vue";
+
   import ClickOutside from "vue-click-outside";
 
+  import dayjs from "dayjs";
+  import weekday from "dayjs/plugin/weekday";
   import {formInputNames} from "@/enums/formInputNames.js";
+
+  dayjs.extend(weekday);
 
   export default {
     props: {
       activeInput: {
         type: String,
       },
+    },
+
+    components: {
+      CalendarHeader,
+    },
+
+    data() {
+      return {
+        currentDate: dayjs(),
+      };
     },
 
     directives: {
@@ -36,6 +54,10 @@
     },
 
     methods: {
+      handleMonthChange(newDate) {
+        this.currentDate = newDate;
+      },
+
       hideCalendar(event) {
         if (
           event.target.id === formInputNames.CHECK_IN ||
