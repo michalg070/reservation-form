@@ -11,7 +11,7 @@
         </div>
       </header>
 
-      <BaseDatePicker />
+      <BaseDatePicker :disabledDates="disabledDates" :selectedRange="selectedRange" />
     </div>
   </form>
 </template>
@@ -22,6 +22,9 @@
 
   export default {
     props: {
+      disabledDates: {
+        type: Array,
+      },
       price: {
         type: Number,
       },
@@ -30,6 +33,9 @@
       },
       reviews: {
         type: Number,
+      },
+      selectedRange: {
+        type: Object,
       },
     },
 

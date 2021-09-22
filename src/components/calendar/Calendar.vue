@@ -17,6 +17,8 @@
 
         <CalendarDays
           :currentDate="currentDate"
+          :selectedRange="selectedRange"
+          :disabledDates="disabledDates"
           @selectedRangeChanged="$emit('selectedRangeChanged', $event)"
         />
       </div>
@@ -29,10 +31,10 @@
   import CalendarWeekdays from "@/components/calendar/CalendarWeekdays.vue";
   import CalendarDays from "@/components/calendar/CalendarDays.vue";
 
-  import ClickOutside from "vue-click-outside";
-
   import dayjs from "dayjs";
   import weekday from "dayjs/plugin/weekday";
+  import ClickOutside from "vue-click-outside";
+
   import {formInputNames} from "@/enums/formInputNames.js";
 
   dayjs.extend(weekday);
@@ -42,22 +44,28 @@
       activeInput: {
         type: String,
       },
+      disabledDates: {
+        type: Array,
+      },
+      selectedRange: {
+        type: Object,
+      },
     },
 
     components: {
+      CalendarDays,
       CalendarHeader,
       CalendarWeekdays,
-      CalendarDays,
+    },
+
+    directives: {
+      ClickOutside,
     },
 
     data() {
       return {
         currentDate: dayjs(),
       };
-    },
-
-    directives: {
-      ClickOutside,
     },
 
     computed: {

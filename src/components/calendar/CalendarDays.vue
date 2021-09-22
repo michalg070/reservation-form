@@ -42,10 +42,7 @@
 
     data() {
       return {
-        currentSelectedRange: {
-          start: null,
-          end: null,
-        },
+        currentSelectedRange: {...this.selectedRange},
         currentHoverDay: null,
       };
     },
@@ -151,7 +148,7 @@
 
     methods: {
       checkIfAnyDisbaleDateIsBetweenStartAndEnd(start, end) {
-        return this.disabledDates?.some((date) => {
+        return this.disabledDates.some((date) => {
           return dayjs(date).isBetween(start, end, null, []);
         });
       },
@@ -184,7 +181,7 @@
       },
 
       checkIfDateIsDisabled(date) {
-        return this.disabledDates?.includes(date);
+        return this.disabledDates.includes(date);
       },
 
       getWeekday(date) {
