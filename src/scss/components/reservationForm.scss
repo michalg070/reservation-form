@@ -30,4 +30,34 @@
       margin-left: rem-calc(8px);
     }
   }
+
+  &__submit {
+    display: block;
+
+    width: 100%;
+    height: rem-calc(50px);
+
+    background-color: $submitColor;
+    border-radius: rem-calc(5px);
+    color: $white;
+
+    border: unset;
+    font-size: 1rem;
+
+    cursor: pointer;
+    margin-top: rem-calc(30px);
+
+    will-change: background-color;
+    transition: background-color 0.15s ease-in;
+
+    &:hover {
+      background-color: $submitColorHover;
+    }
+
+    &:disabled {
+      color: $fontPrimary;
+      background-color: $border;
+      pointer-events: none;
+    }
+  }
 }

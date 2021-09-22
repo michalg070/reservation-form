@@ -87,7 +87,6 @@
     methods: {
       checkIfAnyDisbaleDateIsBetweenStartAndEnd() {
         if (!this.currentSelectedRange.start || !this.currentSelectedRange.end) {
-          console.log("dsass");
           return false;
         }
 
@@ -108,6 +107,8 @@
       handleSelectedRangeChange(selectedRange) {
         this.currentSelectedRange.start = selectedRange.start;
         this.currentSelectedRange.end = selectedRange.end;
+
+        this.$emit("selectedRangeChanged", this.currentSelectedRange);
       },
 
       hideCalendar() {
@@ -162,6 +163,8 @@
           "Passed range is invalid - disable date is in current range. Please pass valid range."
         );
       }
+
+      this.$emit("selectedRangeChanged", this.currentSelectedRange);
     },
   };
 </script>

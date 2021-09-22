@@ -1,5 +1,5 @@
 <template>
-  <form class="reservation-form">
+  <form class="reservation-form" @submit.prevent="handleSubmit">
     <div class="reservation-form__wrapper">
       <header class="reservation-form__header">
         <h5 class="reservation-form__header__price">{{ price }} zł</h5>
@@ -11,7 +11,15 @@
         </div>
       </header>
 
-      <BaseDatePicker :disabledDates="disabledDates" :selectedRange="selectedRange" />
+      <BaseDatePicker
+        :disabledDates="disabledDates"
+        :selectedRange="selectedRange"
+        @selectedRangeChanged="formValues.range = {...$event}"
+      />
+
+      <button :disabled="isSubmitDisabled" class="reservation-form__submit">
+        Submit
+      </button>
     </div>
   </form>
 </template>
@@ -42,6 +50,36 @@
     components: {
       BaseDatePicker,
       BaseRating,
+    },
+
+    data() {
+      return {
+        formValues: {
+          range: {},
+        },
+      };
+    },
+
+    computed: {
+      isSubmitDisabled() {
+        return !this.formValues.range || !this.formValues.range.start || !this.formValues.range.end;
+      },
+    },
+
+    methods: {
+      handleSubmit() {
+        if (this.isSubmitDisabled) {
+          return;
+        }
+
+        window.alert(
+          "Your reservation date is: " +
+            this.formValues.range.start +
+            " - " +
+            this.formValues.range.end +
+            ". Have a nice trip!"
+        );
+      },
     },
   };
 </script>
