@@ -27,7 +27,7 @@
         rating: 1.5,
         price: 232,
         reviews: 234,
-        disabledDates: ["2021-09-24", new Date(2021, 8, 25)], // YYYY-MM-DD or new Date()
+        disabledDates: ["2021-09-21", new Date(2021, 8, 28)], // YYYY-MM-DD or new Date()
         selectedRange: {
           start: new Date(2021, 8, 13), // YYYY-MM-DD or new Date()
           end: "2021-09-17", // YYYY-MM-DD or new Date()
