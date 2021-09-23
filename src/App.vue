@@ -29,9 +29,13 @@
         reviews: 234,
         disabledDates: ["2021-09-24", new Date(2021, 8, 25)],
         selectedRange: {
-          start: new Date(2021, 8, 21),
-          end: "2021-09-23",
+          start: null,
+          end: null,
         },
+        // selectedRange: {
+        //   start: new Date(2021, 8, 21),
+        //   end: "2021-09-23",
+        // },
       };
     },
   };
