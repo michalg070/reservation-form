@@ -1,20 +1,20 @@
 <template>
-  <div class="base-date-picker">
-    <p class="base-date-picker__title">Dates</p>
+  <div class="base-dates-picker">
+    <p class="base-dates-picker__title">Dates</p>
 
-    <div class="base-date-picker__box">
+    <div class="base-dates-picker__box">
       <input
         :id="inputNames.CHECK_IN"
         :value="currentSelectedRange.start"
-        :class="{'base-date-picker__trigger--active': activeInput === inputNames.CHECK_IN}"
+        :class="{'base-dates-picker__trigger--active': activeInput === inputNames.CHECK_IN}"
         @click="showCalendar(inputNames.CHECK_IN)"
-        class="base-date-picker__trigger"
+        class="base-dates-picker__trigger"
         placeholder="Check In"
         readonly
       />
 
       <img
-        class="base-date-picker__arrow"
+        class="base-dates-picker__arrow"
         :src="require('../assets/right-arrow.svg')"
         alt="arrow-icon"
       />
@@ -22,9 +22,9 @@
       <input
         :id="inputNames.CHECK_OUT"
         :value="currentSelectedRange.end"
-        :class="{'base-date-picker__trigger--active': activeInput === inputNames.CHECK_OUT}"
+        :class="{'base-dates-picker__trigger--active': activeInput === inputNames.CHECK_OUT}"
         @click="showCalendar(inputNames.CHECK_OUT)"
-        class="base-date-picker__trigger"
+        class="base-dates-picker__trigger"
         placeholder="Check Out"
         readonly
       />

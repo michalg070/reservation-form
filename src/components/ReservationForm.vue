@@ -11,7 +11,7 @@
         </div>
       </header>
 
-      <BaseDatePicker
+      <BaseDatesPicker
         :disabledDates="disabledDates"
         :selectedRange="selectedRange"
         @selectedRangeChanged="formValues.range = {...$event}"
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import BaseDatePicker from "@/components/BaseDatePicker.vue";
+  import BaseDatesPicker from "@/components/BaseDatesPicker.vue";
   import BaseRating from "@/components/BaseRating.vue";
 
   export default {
@@ -48,7 +48,7 @@
     },
 
     components: {
-      BaseDatePicker,
+      BaseDatesPicker,
       BaseRating,
     },
 
